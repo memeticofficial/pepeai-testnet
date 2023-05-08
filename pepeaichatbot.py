@@ -2,7 +2,7 @@ from petals import DistributedBloomForCausalLM
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
-initial_peers = ['/ip4/pepeaitestnet.pepeco.in/tcp/8989/p2p/Qme6JYqrWzV7NF1Et8er4mseXUomzbLtedbNqHdw4oie7G']
+initial_peers = ['/ip4/54.164.52.79/tcp/8989/p2p/Qme6JYqrWzV7NF1Et8er4mseXUomzbLtedbNqHdw4oie7G']
 
 model = DistributedBloomForCausalLM.from_pretrained("bigscience/bloomz-petals", tuning_mode="ptune", pre_seq_len=16, initial_peers=initial_peers)
 tokenizer = AutoTokenizer.from_pretrained(testmodel)
