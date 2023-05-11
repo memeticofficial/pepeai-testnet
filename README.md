@@ -20,8 +20,10 @@ PepeAI net seperates processing by PepeCoin Nodes.  Each node requires at least 
 
 Start GPU Processing Node:
 - ensure environment is setup as indicated above
-
+- If you have more than 1 GPU, set the GPU index before starting the node
+- you can run multiple nodes under screen
 ```
+export CUDA_VISIBLE_DEVICES=0  # Insert the GPU index here, counting from zero
 python -m petals.cli.run_server bigscience/bloom-petals --initial_peers /ip4/54.164.52.79/tcp/8989/p2p/QmR7G6GZzeQeJoXfTovp8PJdJ7qxKYFwXUa2fp9p6BYdDi
 ```
 
