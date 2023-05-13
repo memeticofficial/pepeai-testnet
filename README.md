@@ -4,6 +4,12 @@
 
 
 Setting up the environment:
+
+Nvidia Driver:
+```
+sudo apt-get update && sudo apt-get install nvidia-driver-530
+```
+
 Anaconda Install:
 
 ```
