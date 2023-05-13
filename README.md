@@ -4,6 +4,15 @@
 
 
 Setting up the environment:
+Anaconda Install:
+
+```
+wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
+chmod +x ./Anaconda3-2023.03-1-Linux-x86_64.sh
+./Anaconda3-2023.03-1-Linux-x86_64.sh
+```
+
+Answer yes to base env setup.
 
 ```
 conda install pytorch pytorch-cuda=11.7 -c pytorch -c nvidia
