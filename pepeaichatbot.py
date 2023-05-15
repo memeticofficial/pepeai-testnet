@@ -1,11 +1,12 @@
 from petals import DistributedBloomForCausalLM
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
+initial_peers = ['/ip4/54.164.52.79/tcp/8989/p2p/QmR7G6GZzeQeJoXfTovp8PJdJ7qxKYFwXUa2fp9p6BYdDi']
 
-initial_peers = ['/ip4/54.164.52.79/tcp/8989/p2p/Qme6JYqrWzV7NF1Et8er4mseXUomzbLtedbNqHdw4oie7G']
+model = DistributedBloomForCausalLM.from_pretrained("bigscience/bloom-petals", tuning_mode="deep_ptune", pre_seq_len=16, initial_peers=initial_peers)
 
-model = DistributedBloomForCausalLM.from_pretrained("bigscience/bloomz-petals", tuning_mode="ptune", pre_seq_len=16, initial_peers=initial_peers)
-tokenizer = AutoTokenizer.from_pretrained(testmodel)
+
+tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-petals")
 
 # streaming chat bot
 with model.inference_session(max_length=512) as sess:
@@ -26,6 +27,4 @@ with model.inference_session(max_length=512) as sess:
             if "\n" in outputs:
                 break
             prefix = None  # Prefix is passed only for the 1st token of the bot's response
-
-
 
