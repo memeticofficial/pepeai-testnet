@@ -17,7 +17,7 @@ Docker:
  - OSX
 
 ```
-sudo docker run -p 31330:31330 --ipc host --gpus all --volume petals-cache:/cache --rm     learningathome/petals:main python -m petals.cli.run_server bigscience/bloom-petals --initial_peers /ip4/54.164.52.79/tcp/8989/p2p/QmR7G6GZzeQeJoXfTovp8PJdJ7qxKYFwXUa2fp9p6BYdDi --port 31330
+sudo docker run -p 31330:31330 --ipc host --gpus all --volume petals-cache:/cache --rm     learningathome/petals:main python -m petals.cli.run_server bigscience/bloomz-petals --initial_peers /ip4/54.164.52.79/tcp/8989/p2p/QmR7G6GZzeQeJoXfTovp8PJdJ7qxKYFwXUa2fp9p6BYdDi --port 31330
 ```
 
 Or install manually:
@@ -53,7 +53,7 @@ Start GPU Processing Node:
 - you can run multiple nodes under screen
 ```
 export CUDA_VISIBLE_DEVICES=0  # Insert the GPU index here, counting from zero
-python -m petals.cli.run_server bigscience/bloom-petals --initial_peers /ip4/54.164.52.79/tcp/8989/p2p/QmR7G6GZzeQeJoXfTovp8PJdJ7qxKYFwXUa2fp9p6BYdDi
+python -m petals.cli.run_server bigscience/bloomz-petals --initial_peers /ip4/54.164.52.79/tcp/8989/p2p/QmR7G6GZzeQeJoXfTovp8PJdJ7qxKYFwXUa2fp9p6BYdDi
 ```
 
 Demo Chatbot:
